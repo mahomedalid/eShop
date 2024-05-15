@@ -18,7 +18,7 @@ on:
       - '.github/workflows/pr-validation-maui.yml'
 
 env:
-  ESHOP_AI_MODEL: "phi3"
+  ESHOP_AI_MODEL: "phi"
   ESHOP_TESTS_AI_COMPLETION_TYPE: "openai"
 
 jobs:  
