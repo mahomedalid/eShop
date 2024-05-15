@@ -44,13 +44,13 @@ public class PromptScoreEval : IEvaluator<int>
 
         var evalResult = await function.InvokeAsync(kernel, promptArgs);
 
-        Console.WriteLine(evalResult);
-        
         if (int.TryParse(evalResult.ToString(), out var evalInt))
         {
             return evalInt;
+        } else {
+            throw new Exception($"Q: {modelOutput.Input} A: {modelOutput.Output} EVAL: {evalResult}");
         }
 
-        return 0;
+       // return 0;
     }
 }

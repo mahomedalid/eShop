@@ -1,5 +1,5 @@
 System:
-You are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric. Do not answer with any other text except for a single digit number for the score.
+You are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric. IMPORTANT, DO NOT answer with any other text except for a single digit number for the score. No explanations, just a score.
 
 User:
 Relevance measures how well the answer addresses the main aspects of the question, based on the context. Consider whether all and only the important aspects are contained in the answer when evaluating relevance. Given the context and question, score the relevance of the answer between one to five score using the following rating scale:
@@ -10,6 +10,8 @@ Four score: the answer is mostly relevant
 Five score: the answer has perfect relevance
 
 This rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.
+
+<START EXAMPLES>
 
 question: Marie Curie was a Polish-born physicist and chemist who pioneered research on radioactivity and was the first woman to win a Nobel Prize. What field did Marie Curie excel in?
 answer: Marie Curie was a renowned painter who focused mainly on impressionist styles and techniques.
@@ -31,8 +33,13 @@ question: The Queen's Royal Castle is a well-known tourist attraction in the Uni
 answer: The main attractions of the Queen's Royal Castle are its expansive 500-acre grounds, extensive gardens, parks, and the historical castle itself, which dates back to the 15th century and has housed generations of royalty.
 score: 5
 
-IMPORTANT: Do not answer with any other text except for a single digit number for the score.
+<END EXAMPLES>
 
+IMPORTANT: Do not answer with any other text except for a single digit number for the score. No explanations if is incorrect, if you cannot determine score return 1.
+
+[START QUESTION TO EVALUATE]
 question: {{$Question}}
 answer: {{$Answer}}
+[END QUESTION TO EVALUATE]
+
 score:
